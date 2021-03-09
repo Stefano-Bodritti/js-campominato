@@ -31,7 +31,11 @@ for (var i = 0; i < 5; i++) {
 
 // 2. chiedo all'utente numeri finchè non inserisce un numero vietato o li inserisce tutti
 do {
+  // 2a. verifico che l'utente non inserisca più volte lo stesso numero
   numeroUtente = parseInt(prompt("Inserisci un numero tra 1 e 15"));
+  while ( arrayUtente.includes(numeroUtente) ) {
+    numeroUtente = parseInt(prompt(" Non fare il furbo, hai già inserito il numero "+ numeroUtente + ", riprova"));
+  }
   arrayUtente.push(numeroUtente);
   n++;
 } while ( !arrayRandom.includes(numeroUtente) );
