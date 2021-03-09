@@ -18,6 +18,7 @@ var arrayRandom = [];
 var arrayUtente = [];
 var temp;
 var numeroUtente;
+var n = 0;
 
 // 1. genero 5 numeri numeri random diversi
 for (var i = 0; i < 5; i++) {
@@ -32,7 +33,9 @@ for (var i = 0; i < 5; i++) {
 do {
   numeroUtente = parseInt(prompt("Inserisci un numero tra 1 e 15"));
   arrayUtente.push(numeroUtente);
+  n++;
 } while ( !arrayRandom.includes(numeroUtente) );
-console.log(arrayRandom);
 
+console.log(arrayRandom);
 console.log(arrayUtente);
+alert("Hai beccato la bomba! Dopo aver inserito ben " + n + " numeri")
