@@ -38,4 +38,4 @@ do {
 
 console.log(arrayRandom);
 console.log(arrayUtente);
-alert("Hai beccato la bomba! Dopo aver inserito ben " + n + " numeri")
+alert("Hai beccato la bomba! Dopo aver inserito ben " + n + " numeri");
