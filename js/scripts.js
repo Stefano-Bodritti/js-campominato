@@ -28,7 +28,7 @@ for (var i = 0; i < 5; i++) {
   } while ( arrayRandom.includes(temp) );
   arrayRandom.push(temp);
 }
-
+console.log(arrayRandom);
 // 2. chiedo all'utente numeri finchè non inserisce un numero vietato o li inserisce tutti
 do {
   // 2a. verifico che l'utente non inserisca più volte lo stesso numero
@@ -38,8 +38,12 @@ do {
   }
   arrayUtente.push(numeroUtente);
   n++;
-} while ( !arrayRandom.includes(numeroUtente) );
+} while ( !arrayRandom.includes(numeroUtente) && n < (15 - 5) );
 
-console.log(arrayRandom);
+
 console.log(arrayUtente);
-alert("Hai beccato la bomba! Dopo aver inserito ben " + n + " numeri");
+if ( n == (15 - 5) ) {
+  alert("Hai vinto!");
+} else {
+  alert("Hai beccato la bomba! Dopo aver inserito ben " + n + " numeri");
+}
