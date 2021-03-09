@@ -13,6 +13,13 @@ function numeroRandom(min, max) {
   return numeroRandom;
 }
 
+// funzione che verifica l'inserimento corretto dell'utente
+function verificaNumero(numMin, numMax) {
+  do {
+    numeroUtente = parseInt(prompt("Inserisci un numero tra " + numMin + " e " + numMax + " compresi"));
+  } while (isNaN(numeroUtente) || numeroUtente > numMax || numeroUtente < numMin);
+}
+
 // definisco variabili globali
 var arrayRandom = [];
 var arrayUtente = [];
@@ -29,10 +36,11 @@ for (var i = 0; i < 5; i++) {
   arrayRandom.push(temp);
 }
 console.log(arrayRandom);
+
 // 2. chiedo all'utente numeri finchè non inserisce un numero vietato o li inserisce tutti
 do {
   // 2a. verifico che l'utente non inserisca più volte lo stesso numero
-  numeroUtente = parseInt(prompt("Inserisci un numero tra 1 e 15"));
+  verificaNumero(1, 15);
   while ( arrayUtente.includes(numeroUtente) ) {
     numeroUtente = parseInt(prompt(" Non fare il furbo, hai già inserito il numero "+ numeroUtente + ", riprova"));
   }
@@ -40,10 +48,10 @@ do {
   n++;
 } while ( !arrayRandom.includes(numeroUtente) && n < (15 - 5) );
 
-
 console.log(arrayUtente);
+// 3. stampo se l'utente ha vinto o perso
 if ( n == (15 - 5) ) {
   alert("Hai vinto!");
 } else {
-  alert("Hai beccato la bomba! Dopo aver inserito ben " + n + " numeri");
+  alert("Hai beccato la bomba! Dopo aver inserito ben " + (n - 1) + " numeri consentiti");
 }
