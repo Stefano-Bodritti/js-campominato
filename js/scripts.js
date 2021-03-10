@@ -16,9 +16,9 @@ function numeroRandom(min, max) {
 // funzione che verifica l'inserimento corretto dell'utente
 function verificaNumero(numMin, numMax) {
   do {
-    numeroUtente = parseInt(prompt("Inserisci un numero tra " + numMin + " e " + numMax + " compresi"));
-  } while (isNaN(numeroUtente) || numeroUtente > numMax || numeroUtente < numMin);
-  return numeroUtente;
+    var numeroInserito = parseInt(prompt("Inserisci un numero tra " + numMin + " e " + numMax + " compresi"));
+  } while (isNaN(numeroInserito) || numeroInserito > numMax || numeroInserito < numMin);
+  return numeroInserito;
 }
 
 // definisco variabili globali
@@ -41,7 +41,7 @@ if ( difficult == 0 ) {
   numeroMassimo = 50;
 }
 
-// 1. genero 16 numeri numeri random diversi
+// 1. genero 16 numeri random diversi
 for (var i = 0; i < bombe; i++) {
   // 1a. se il numero non è già presente nell'array, lo inserisco nell'array
   do {
