@@ -73,5 +73,20 @@ console.log(arrayUtente);
 if ( bombaEsplosa == false ) {
   alert("Hai vinto!");
 } else {
-  alert("Hai beccato la bomba! Dopo aver inserito ben " + n + " numeri consentiti");
+  // alert("Hai beccato la bomba! Dopo aver inserito ben " + n + " numeri consentiti");
 }
+
+var stampaNumeri = arrayRandom[0];
+for (var j = 1; j < arrayRandom.length; j++) {
+  stampaNumeri += " - " + arrayRandom[j];
+}
+var stampaUtente = "";
+if (arrayUtente.length != 0) {
+  stampaUtente = arrayUtente[0];
+  for (var x = 1; x < arrayUtente.length; x++) {
+    stampaUtente += " - " + arrayUtente[x];
+  }
+}
+document.getElementById('bombe').innerHTML = stampaNumeri;
+document.getElementById('numeri-utente').innerHTML = stampaUtente;
+document.getElementById('punteggio').innerHTML = n;
